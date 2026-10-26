@@ -25,9 +25,8 @@ else
 fi
 
 echo -e "\e[1;36m[2/3] Установка библиотек Python...\e[0m"
-# В Termux иногда нужен флаг --break-system-packages
-pip install --upgrade pip
-pip install requests beautifulsoup4 colorama dnspython rarfile || pip install --break-system-packages requests beautifulsoup4 colorama dnspython rarfile
+# Используем флаг --break-system-packages для Termux, чтобы избежать ошибок
+pip install requests beautifulsoup4 colorama dnspython rarfile --break-system-packages || pip install requests beautifulsoup4 colorama dnspython rarfile
 
 echo -e "\e[1;36m[3/3] Запуск Skarf Corporation...\e[0m"
 cd "$(dirname "$0")"
